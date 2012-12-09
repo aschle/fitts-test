@@ -1,13 +1,24 @@
 $(document).ready(function() {
 
-  var configuration = [{"w": 10, "d": 100}, {"w": 10, "d": 50}, {"w": 30, "d": 100}, {"w": 5, "d": 20}];
+  var configuration = [
+    {"w": 10, "d": 100},
+    {"w": 10, "d": 50},
+    {"w": 30, "d": 100},
+    {"w": 5, "d": 20},
+    {"w": 20, "d": 20},
+    {"w": 2, "d": 50},
+    {"w": 20, "d": 100},
+    {"w": 10, "d": 100},
+    {"w": 40, "d": 10},
+    {"w": 30, "d": 5}
+    ];
 
-  $("button[id^=test]").click(function() {
-    var id = $(this).data("id");
-    initTest(id-1);
+  $("#start").click(function() {
+    showConf(0);
+    $("#message").html("Start the test by clicking on the colored area. Then clicke alternating the yellow and blue are. 10 configurations are presented. You time is limited to 10 sekonds.");
   });
 
-  function initTest(id) {
+  function showConf(id) {
 
     var fullWidth = $("#sketch-container").width();
     var height = 200;
